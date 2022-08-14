@@ -1,0 +1,234 @@
+
+<!-- 
+Template Name: FRIDAY | Coupons, Deals, Discounts and Promo codes Template
+Version: 1.0.0
+Author: CODASTROID
+Contact: codastroid@gmail.com
+Follow: https://themeforest.net/user/codastroid?ref=CODASTROID
+Theme Link: https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en" dir="ltr" class="no-js"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:47 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+<th:block th:include="head ::head"></th:block>
+</head>
+
+<body id="body" class="wide-layout preloader-active">
+
+	<!--[if lt IE 9]>
+        <p class="browserupgrade alert-error">
+        	You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
+
+	<noscript>
+		<div class="noscript alert-error">
+			For full functionality of this site it is necessary to enable
+			JavaScript. Here are the <a href="http://www.enable-javascript.com/"
+				target="_blank"> instructions how to enable JavaScript in your
+				web browser</a>.
+		</div>
+	</noscript>
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- PRELOADER                                 -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Preloader -->
+	<div id="preloader" class="preloader">
+		<div class="loader-cube">
+			<div class="loader-cube__item1 loader-cube__item"></div>
+			<div class="loader-cube__item2 loader-cube__item"></div>
+			<div class="loader-cube__item4 loader-cube__item"></div>
+			<div class="loader-cube__item3 loader-cube__item"></div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- WRAPPER                                   -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<div id="pageWrapper" class="page-wrapper">
+		<!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+		<th:block th:include="header ::header"></th:block>
+
+		<!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+		<!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+		<main id="mainContent" class="main-content">
+		<div class="page-container ptb-60">
+			<div class="container">
+				<section class="sign-area panel p-40">
+					<h3 class="sign-title">
+						<b>My Profile</b>
+					</h3>
+					<div class="row row-rl-0">
+						<div class="col-sm-6 col-md-7 col-left">
+							<form class="p-40" th:action="@{/User/editUser}" method="post"
+							th:object="${user}"
+								>
+								<div class="form-group">
+									<label class="sr-only">Full Name</label> <input name="name"
+										th:value="${session.user?.name}" type="text"
+										class="form-control input-lg" required="required"
+										placeholder="Full Name">
+								</div>
+								<div class="form-group">
+									<label class="sr-only">Email</label> <input name="email"
+										th:value="${session.user?.email}" type="email"
+										class="form-control input-lg" placeholder="Email"
+										required="required" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+								</div>
+								<div class="form-group">
+									<label class="sr-only">Old Password</label> <input
+										type="password" name="old_pass" class="form-control input-lg"
+										placeholder="Old Password"
+										              required="required" 
+                          >
+								</div>
+								<div class="form-group">
+									<label class="sr-only">New Password</label> <input
+										  name="newPass"  id="password" type="password"
+										class="form-control input-lg" placeholder="New Password"
+					     >
+								</div>
+								<div class="form-group">
+									<label class="sr-only">Confirm Password</label> <input
+										type="password" onkeyup="check()" id="confirm_password"
+										class="form-control input-lg" placeholder="Confirm Password"
+					      >
+								</div>
+                                	         <div th:text="${updateMessage}"></div>
+                        
+								<span id='message'></span>
+
+
+								<button type="submit" class="btn btn-block btn-lg">Save
+									Changes</button>
+							</form>
+
+						</div>
+
+					</div>
+				</section>
+			</div>
+		</div>
+
+
+		</main>
+		<!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->
+		<th:block th:include="footer ::footer"></th:block>
+		<!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
+
+	</div>
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- END WRAPPER                               -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+	<!-- ========== BUY THEME ========== -->
+	<!-- <a href="https://google.com/" class="buy-theme"
+		data-href="https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID"
+		target="_blank" id="buy_theme"> <i class="fa fa-credit-card"></i>
+	</a>
+ -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- BACK TO TOP                               -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<div id="backTop" class="back-top is-hidden-sm-down">
+		<i class="fa fa-angle-up" aria-hidden="true"></i>
+	</div>
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- SCRIPTS                                   -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+	<!-- (!) Placed at the end of the document so the pages load faster -->
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Initialize jQuery library                 -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="assets/js/jquery-1.12.3.min.js"></script>
+
+	<script type="text/javascript">
+		var check = function() {
+			if (document.getElementById('password').value == document
+					.getElementById('confirm_password').value) {
+				document.getElementById('message').style.color = 'green';
+				document.getElementById('message').innerHTML = '';
+				document.getElementById("submitbtn").disabled = false;
+
+			} else {
+				document.getElementById('message').style.color = 'red';
+				document.getElementById('message').innerHTML = 'Password not matching';
+				document.getElementById("submitbtn").disabled = true;
+
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		var check = function() {
+			if (document.getElementById('password').value == document
+					.getElementById('confirm_password').value) {
+				document.getElementById('message').style.color = 'green';
+				document.getElementById('message').innerHTML = '';
+				document.getElementById("submitbtn").disabled = false;
+
+			} else {
+				document.getElementById('message').style.color = 'red';
+				document.getElementById('message').innerHTML = 'Password not matching';
+				document.getElementById("submitbtn").disabled = true;
+
+			}
+		}
+	</script>
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Latest compiled and minified Bootstrap    -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- JavaScript Plugins                        -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- (!) Include all compiled plugins (below), or include individual files as needed -->
+
+	<!-- Modernizer JS -->
+	<script src="assets/vendors/modernizr/modernizr-2.6.2.min.js"></script>
+
+	<!-- Owl Carousel -->
+	<script type="text/javascript"
+		src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+
+	<!-- FlexSlider -->
+	<script type="text/javascript"
+		src="assets/vendors/flexslider/jquery.flexslider-min.js"></script>
+
+	<!-- Coutdown -->
+	<script type="text/javascript"
+		src="assets/vendors/countdown/jquery.countdown.js"></script>
+
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Custom Template JavaScript                   -->
+	<!-- ––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:47 GMT -->
+</html>

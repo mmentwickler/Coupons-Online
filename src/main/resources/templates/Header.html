@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" dir="ltr" class="no-js">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div th:fragment="header">
+		<header id="mainHeader" class="main-header">
+
+			<!-- Top Bar -->
+			<div class="top-bar bg-gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-4 is-hidden-sm-down">
+							<ul class="nav-top nav-top-left list-inline t-left">
+								<li><a th:href="@{terms_conditions}"><i
+										class="fa fa-question-circle"></i>Discounts Guide</a></li>
+								<li><a th:href="@{faq}"><i class="fa fa-support"></i>Customer
+										Assistance</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-12 col-md-8">
+							<ul
+								class="nav-top nav-top-right list-inline t-xs-center t-md-right">
+							<!-- 	<li><a href="#"><i class="fa fa-flag-en"></i>English <i
+										class="fa fa-caret-down"></i></a>
+									<ul>
+										<li><a href="index-2.html"><i class="fa fa-flag-en"></i>English</a>
+										</li>
+										<li><a href="ar/index.html"><i class="fa fa-flag-ar"></i>العربية</a>
+										</li>
+									</ul></li> -->
+								<!--      <li>
+                                    <a href="#"><i class="fa fa-usd"></i>USD <i class="fa fa-caret-down"></i></a>
+                                    <ul>
+                                        <li><a href="#">USD - US Dollar</a>
+                                        </li>
+                                        <li><a href="#">EUR - Euro</a>
+                                        </li>
+                                        <li><a href="#">CNY - Chinese Yuan</a>
+                                        </li>
+                                        <li><a href="#">RUB - Russian Ruble</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+								<!--      th:if="${msg}" th:utext="${msg}"
+                            -->
+								<li th:if="!${session.loggedin}"><a th:href="@{/signin}">
+										<i class="fa fa-lock"></i>Sign In
+								</a></li>
+								<li th:if="!${session.loggedin}"><a th:href="@{/signup}"><i
+										class="fa fa-user"></i>Sign Up</a></li>
+										
+								<li th:if="${session.loggedin}">
+								
+								<i style="font-size: 20px;" th:text="${session.user?.name}" class=""></i>
+							    <span class="glyphicon glyphicon-user"
+										style="font-size: 30px;"></span>
+							 	<i class="fa fa-caret-down"></i>
+									<ul>
+										<li><a th:href="@{profile}"><i class=""></i>Settings</a>
+										</li>
+										<li><a th:href="@{/User/logout}"><span class="oi" data-glyph="account-logout"></span>Logout</a>
+										</li>
+									</ul>
+									</li>
+
+
+								<!-- 				<span th:text="${session.user.name}"></span>
+							
+								<li th:if="${session.loggedin}">
+								<a th:href="@{profile}">
+										<span class="glyphicon glyphicon-user"
+										style="font-size: 30px;"></span>
+								</a></li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Top Bar -->
+
+			<!-- Header Header -->
+			<div class="header-header bg-white">
+				<div class="container">
+					<div class="row row-rl-0 row-tb-20 row-md-cell">
+						<div class="brand col-md-3 t-xs-center t-md-left valign-middle">
+							<a th:href="@{/}" class="logo"> <img
+								src="assets/images/logo_new.png" alt="" width="250">
+							</a>
+						</div>
+						<div class="header-search col-md-9">
+							<div class="row row-tb-10 "></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Header Header -->
+
+			<!-- Header Menu -->
+			<div class="header-menu bg-blue">
+				<div class="container">
+					<nav class="nav-bar navbar-sticky-top">
+						<div class="nav-header">
+							<span class="nav-toggle" data-toggle="#header-navbar"> <i></i>
+								<i></i> <i></i>
+							</span>
+						</div>
+						<div id="header-navbar" class="nav-collapse">
+							<ul class="nav-menu" style="float: right;">
+								<li ><a th:href="@{/}">Home</a></li>
+								<!-- <li><a th:href="@{checkexpiry}">Expiry</a></li> -->
+								
+								<li><a th:href="@{categories}">Categories</a></li>
+								<li><a th:href="@{expired_deals}">Expired deals</a></li>
+								<li
+								
+								th:if="${session.user?.userType==T(project.coupon.CouponsOnline.models.Usertype).Admin}"
+								><a href="coupons_grid.html">Manage Coupons</a>
+									<ul>
+								<!-- 		<li><a th:href="@{edit_coupon}">Edit Coupons</a></li>
+								 -->		<li><a th:href="@{manage_coupons}">Delete Coupons</a></li>
+										<li><a th:href="@{add_coupon}">Add New Coupons</a></li>
+									</ul></li>
+
+								<li><a th:href="@{contact_us_01}">Contact Us</a></li>
+								<!--  <li>
+                                    <a href="#">Blog</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Classic View</a>
+                                            <ul>
+                                                <li><a href="blog_classic_right_sidebar.html">Right Sidenar</a>
+                                                </li>
+                                                <li><a href="blog_classic_left_sidebar.html">Left Sidebar</a>
+                                                </li>
+                                                <li><a href="blog_classic_fullwidth.html">Full Width</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Grid View</a>
+                                            <ul>
+                                                <li><a href="blog_grid_3col.html">3 Columns</a>
+                                                </li>
+                                                <li><a href="blog_grid_2col.html">2 Columns</a>
+                                                </li>
+                                                <li><a href="blog_grid_right_sidebar.html">Right Sidebar</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">List View</a>
+                                            <ul>
+                                                <li><a href="blog_list_right_sidebar.html">Right Sidenar</a>
+                                                </li>
+                                                <li><a href="blog_list_left_sidebar.html">Left Sidebar</a>
+                                                </li>
+                                                <li><a href="blog_list_fullwidth.html">Full Width</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Blog Single</a>
+                                            <ul>
+                                                <li><a href="blog_single_standard.html">Standard Post</a>
+                                                </li>
+                                                <li><a href="blog_single_gallery.html">Gallery Post</a>
+                                                </li>
+                                                <li><a href="blog_single_youtube.html">Youtube Video</a>
+                                                </li>
+                                                <li><a href="blog_single_vimeo.html">Vimeo Video</a>
+                                                </li>
+                                                <li><a href="blog_single_map.html">Google Map</a>
+                                                </li>
+                                                <li><a href="blog_single_quote.html">Quote Post</a>
+                                                </li>
+                                                <li><a href="blog_single_audio.html">Audio Post</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="index-3.html">Home Default</a>
+                                        </li>
+                                        <li><a href="signin.html">Sign In</a>
+                                        </li>
+                                        <li><a href="signup.html">Sign Up</a>
+                                        </li>
+                                        <li><a href="404.html">404 Page</a>
+                                        </li>
+                                        <li><a href="faq.html">FAQ Page</a>
+                                        </li>
+                                        <li><a href="cart.html">Cart Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="checkout_method.html">Checkout</a>
+                                            <ul>
+                                                <li><a href="checkout_method.html">Checkout method</a>
+                                                </li>
+                                                <li><a href="checkout_billing.html">Billing Information</a>
+                                                </li>
+                                                <li><a href="checkout_payment.html">Payment Information</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact Us</a>
+                                            <ul>
+                                                <li><a href="contact_us_01.html">Contact Us 1</a>
+                                                </li>
+                                                <li><a href="contact_us_02.html">Contact Us 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Deals Pages</a>
+                                            <ul>
+                                                <li><a href="deals_grid.html">Grid View</a>
+                                                </li>
+                                                <li><a href="deals_list.html">List View</a>
+                                                </li>
+                                                <li><a href="deal_single.html">Deal Single</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Coupons Pages</a>
+                                            <ul>
+                                                <li><a href="coupons_grid.html">Grid View</a>
+                                                </li>
+                                                <li><a href="coupons_grid_sidebar.html">Grid With Sidebar</a>
+                                                </li>
+                                                <li><a href="coupons_list.html">List View</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="terms_conditions.html">Terms &amp; conditions</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+							</ul>
+						</div>
+						<!--  <div class="nav-menu nav-menu-fixed">
+                            <a href="ar/index.html" target="_blank">RTL VERSION<i class="fa fa-long-arrow-right ml-10"></i></a>
+                        </div> -->
+					</nav>
+				</div>
+			</div>
+			<!-- End Header Menu -->
+
+		</header>
+
+	</div>
+</body>
+</html>

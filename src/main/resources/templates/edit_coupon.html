@@ -1,0 +1,367 @@
+
+<!-- 
+Template Name: FRIDAY | Coupons, Deals, Discounts and Promo codes Template
+Version: 1.0.0
+Author: CODASTROID
+Contact: codastroid@gmail.com
+Follow: https://themeforest.net/user/codastroid?ref=CODASTROID
+Theme Link: https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+
+ dir="ltr" class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<th:block th:include="head ::head"  ></th:block>
+
+
+<style type="text/css">
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+</style>
+
+</head>
+
+<body id="body" class="wide-layout preloader-active">
+
+    <!--[if lt IE 9]>
+        <p class="browserupgrade alert-error">
+        	You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
+
+    <noscript>
+        <div class="noscript alert-error">
+            For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+		 instructions how to enable JavaScript in your web browser</a>.
+        </div>
+    </noscript>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PRELOADER                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-cube">
+            <div class="loader-cube__item1 loader-cube__item"></div>
+            <div class="loader-cube__item2 loader-cube__item"></div>
+            <div class="loader-cube__item4 loader-cube__item"></div>
+            <div class="loader-cube__item3 loader-cube__item"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- WRAPPER                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="pageWrapper" class="page-wrapper">
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+         <th:block th:include="header ::header"  ></th:block>
+    
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <div class="page-container ptb-60">
+                <div class="container">
+                    <section class="sign-area panel p-40">
+                        <h3 class="sign-title"><b>Edit Coupon</b></h3>
+                        <div class="row row-rl-0">
+                            <div class="col-sm-6 col-md-7 col-left">
+                                <form class="p-40" th:action="@{/Coupons/updateCoupon}"
+                                th:object="${editcoupon}" enctype="multipart/form-data"
+                                 action="#" method="post">
+                                    <div class="form-group">
+                                        <label ><h4><b>Title</b></h4></label>
+                                        <input 
+                                        th:value="${editcoupon?.title}"
+                                         required="required"
+                                         type="text" class="form-control input-lg" 
+                                         placeholder="Title">
+                                    </div>
+                                     <div class="form-group">
+      <label for="sel1"><h4><b>Category :</b></h4></label>
+      <select  th:value="${editcoupon?.category}"
+                                         required="required" class="form-control" id="sel1">
+       <option>Beauty</option>
+        <option>Events</option>
+        <option>Fashion</option>
+        <option>Fitness</option>
+        <option>Food &amp; Drink</option>
+        <option>Shopping</option>
+        <option>Travel</option>
+       </select>
+      <br>
+      
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1"><h4><b>Description</b></h4></label>
+    <textarea    th:value="${editcoupon?.description}"
+                                         required="required"
+                                      class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+     <div class="form-group">
+        <label><h4><b>Upload Main Image</b></h4></label>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file" name="mainImage" id="mainImage">
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+   <!--      <img id='img-upload'/>
+   -->  </div>
+
+          <div class="form-group">
+        <label><h4><b>More Images</b></h4></label>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file"id="more_images" name="more_images" multiple=/>
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+   <!--      <img id='img-upload'/>
+   -->  </div>
+<!-- 
+   <div class="row">
+ <form action="multiupload.php" method="post" enctype="multipart/form-data">
+  <div class="col-md-6">
+      <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();" multiple/>
+  </div>
+  <div class="col-md-6">
+      <input type="submit" class="btn btn-primary" name='submit_image' value="Upload Multiple Image"/>
+  </div>
+ </form>
+ </div> -->
+ <div class="form-group">
+                                        <label ><h4><b>Price Of Coupon</b></h4></label>
+                                        <input    th:value="${editcoupon?.coupon_Price}"
+                                         required="required"
+                                      type="number" min="0" class="form-control input-lg" placeholder="Coupon Price">
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label ><h4><b>Price Of Deal(OLD)</b></h4></label>
+                                        <input    th:value="${editcoupon?.deal_Old_Price}"
+                                         required="required"
+                                      type="number" min="0" class="form-control input-lg" placeholder="Old Price">
+<br>
+	<label><h4>
+											<b>Price Of Deal(New)</b>
+										</h4></label> 
+                                        <input    th:value="${editcoupon?.deal_New_Price}"
+                                         required="required"
+                                       type="number" min="0" class="form-control input-lg" placeholder="New Price">
+                                    </div>
+                                    
+                                    	<div class="form-group">
+								<label><h4>
+											<b>Expiry date</b>
+										</h4></label>
+									<div class='input-group date' id='datetimepicker1'>
+										<input 
+										 th:value="${editcoupon?.expiry_Date}"
+                                      
+
+ type='text' class="form-control" required="required"/> <span
+											class="input-group-addon"> <span
+											class="glyphicon glyphicon-calendar" ></span>
+										</span>
+									</div>
+								</div>
+
+                                         <div class="form-group">
+        <label><h4><b>Upload Coupon</b></h4></label>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input type="file"id="couponImg" name="couponImg">
+                </span>
+            </span>
+            <input type="text" class="form-control" readonly>
+        </div>
+   <!--      <img id='img-upload'/>
+   -->  </div>
+                                    <div class="form-group">
+    <label for="exampleFormControlTextarea1"><h4><b>How to Use this coupon</b></h4></label>
+    <textarea    th:value="${editcoupon?.how_To_Use}"
+                                         required="required"
+                                      class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div><div class="form-group">
+    <label for="exampleFormControlTextarea1"><h4><b>Location ,Details Etc</b></h4></label>
+    <textarea    th:value="${editcoupon?.other_Details}"
+                                         required="required"
+                                      class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+                                    
+                                  
+                                    <button type="submit" class="btn btn-block btn-lg">Save Changes</button>
+                                </form>
+                                <!-- <span class="or">Or</span> -->
+                            </div>
+                    <!--         <div class="col-sm-6 col-md-5 col-right">
+                                <div class="social-login p-40">
+                                    <div class="mb-20">
+                                        <button class="btn btn-lg btn-block btn-social btn-facebook"><i class="fa fa-facebook-square"></i>Sign Up with Facebook</button>
+                                    </div>
+                                    <div class="mb-20">
+                                        <button class="btn btn-lg btn-block btn-social btn-twitter"><i class="fa fa-twitter"></i>Sign Up with Twitter</button>
+                                    </div>
+                                    <div class="mb-20">
+                                        <button class="btn btn-lg btn-block btn-social btn-google-plus"><i class="fa fa-google-plus"></i>Sign Up with Google</button>
+                                    </div>
+                                    <div class="custom-checkbox mb-20">
+                                        <input type="checkbox" id="remember_social" checked>
+                                        <label class="color-mid" for="remember_social">Keep me signed in on this computer.</label>
+                                    </div>
+                                    <div class="text-center color-mid">
+                                        Already have an Account ? <a href="signin.html" class="color-green">Login</a>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+        </main>
+        <!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->
+           <th:block th:include="footer ::footer"  ></th:block>
+      
+     
+        <!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
+
+    </div>
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- END WRAPPER                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- ========== BUY THEME ========== -->
+    <a href="https://google.com/" class="buy-theme" data-href="https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID" target="_blank" id="buy_theme">
+        <i class="fa fa-credit-card"></i>
+    </a>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- BACK TO TOP                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="backTop" class="back-top is-hidden-sm-down">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- SCRIPTS                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- (!) Placed at the end of the document so the pages load faster -->
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Initialize jQuery library                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="assets/js/jquery-1.12.3.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Latest compiled and minified Bootstrap    -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- JavaScript Plugins                        -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- (!) Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Modernizer JS -->
+    <script src="assets/vendors/modernizr/modernizr-2.6.2.min.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- FlexSlider -->
+    <script type="text/javascript" src="assets/vendors/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- Coutdown -->
+    <script type="text/javascript" src="assets/vendors/countdown/jquery.countdown.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready( function() {
+        $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function(event, label) {
+            
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+            
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+        
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function(){
+            readURL(this);
+        });     
+    });
+
+</script>
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Custom Template JavaScript                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:47 GMT -->
+</html>

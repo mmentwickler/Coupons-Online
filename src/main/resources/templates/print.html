@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+ dir="ltr" class="no-js">
+<head>
+<!-- <meta charset="ISO-8859-1"> -->
+<title>Insert title here</title>
+<script>
+function PrintElem()
+{
+/*var page=document.body.innerHTML;
+var printcontent=document.getElementById(elem).innerHTML;
+document.body.innerHTML=printcontent;
+window.print();*/
+
+popup = window.open();
+popup.document.write("<img th:src='@{/couponimage/{id}(id=${session.showcoupon.id})}'/>" 
+);
+popup.focus(); //required for IE
+popup.print();
+}
+</script>
+</head>
+
+<body>
+<center>
+ <img  id ="coupon" onload="PrintElem()" class="card-img-top" th:src="@{/couponimage/{id}(id=${session.showcoupon.id})}">
+</center>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+ dir="ltr" class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/checkout_payment.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:08:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<th:block th:include="head ::head"  ></th:block>
+
+</head>
+<body>
+<form method="POST" action="https://merchant.wmtransfer.com/lmi/payment_utf.asp" accept-charset="utf-8">
+    <input type="hidden" name="LMI_PAYMENT_AMOUNT" value="12.08">
+    <input type="hidden" name="LMI_PAYMENT_DESC" value="payment under the bill">
+    <input type="hidden" name="LMI_PAYMENT_NO" value="1234">
+    <input type="hidden" name="LMI_PAYEE_PURSE" value="Z145179295679">
+    <input type="hidden" name="LMI_SIM_MODE" value="0">
+
+    <input type="hidden" name="LMI_RESULT_URL" value="http://www.shop.com/result.asp">
+    <input type="hidden" name="LMI_SUCCESS_URL" value="http://www.shop.com/success.html">
+    <input type="hidden" name="LMI_SUCCESS_METHOD" value="2">
+    <input type="hidden" name="LMI_FAIL_URL" value="http://www.shop.com/fail.html">
+    <input type="hidden" name="LMI_FAIL_METHOD" value="2">
+
+    <input type="hidden" name="FIELD_1" value="VALUE_1">
+    <input type="hidden" name="FIELD_2" value="VALUE_2">
+    ...
+    <input type="hidden" name="FIELD_N" value="VALUE_N">
+    ...
+</form>
+<!--    <h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
+        <div th:unless='${error}'>
+            <h3 style='color: green;'>Success!</h3>
+            <div>Id.: <span th:text='${id}'></span></div>
+            <div>Status: <span th:text='${status}'></span></div>
+            <div>Charge id.: <span th:text='${chargeId}'></span></div>
+            <div>Balance transaction id.: <span th:text='${balance_transaction}'></span></div>
+        </div>
+        <a href='/checkout.html'>Checkout again</a>  -->
+</body>

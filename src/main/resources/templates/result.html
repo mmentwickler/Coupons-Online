@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+ dir="ltr" class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/checkout_payment.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:08:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<th:block th:include="head ::head"  ></th:block>
+
+</head>
+<body>
+   <h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
+        <div th:unless='${error}'>
+            <h3 style='color: green;'>Success!</h3>
+            <div>Id.: <span th:text='${id}'></span></div>
+            <div>Status: <span th:text='${status}'></span></div>
+            <div>Charge id.: <span th:text='${chargeId}'></span></div>
+            <div>Balance transaction id.: <span th:text='${balance_transaction}'></span></div>
+        </div>
+        <a href='/checkout.html'>Checkout again</a> 
+</body>

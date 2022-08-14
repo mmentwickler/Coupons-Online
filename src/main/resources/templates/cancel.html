@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<th:block th:include="head ::head"  ></th:block>
+</head>
+
+<body id="body" class="wide-layout preloader-active">
+
+    <!--[if lt IE 9]>
+        <p class="browserupgrade alert-error">
+        	You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
+
+    <noscript>
+        <div class="noscript alert-error">
+            For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+		 instructions how to enable JavaScript in your web browser</a>.
+        </div>
+    </noscript>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PRELOADER                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-cube">
+            <div class="loader-cube__item1 loader-cube__item"></div>
+            <div class="loader-cube__item2 loader-cube__item"></div>
+            <div class="loader-cube__item4 loader-cube__item"></div>
+            <div class="loader-cube__item3 loader-cube__item"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- WRAPPER                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="pageWrapper" class="page-wrapper">
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+        <th:block th:include="header ::header"  ></th:block>
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <div class="page-container ptb-10">
+                <div class="container">
+
+<center>
+ <h1>We are Sorry But the Payment was not successfull  ! </h1>
+ </center>
+
+                    
+                </div>
+            </div>
+
+
+        </main>
+        <!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->
+          <th:block th:include="footer ::footer"  ></th:block>
+      
+                <!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
+
+    </div>
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- END WRAPPER                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- ========== BUY THEME ========== -->
+    <a href="https://google.com/" class="buy-theme" data-href="https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID" target="_blank" id="buy_theme">
+        <i class="fa fa-credit-card"></i>
+    </a>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- BACK TO TOP                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="backTop" class="back-top is-hidden-sm-down">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- SCRIPTS                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- (!) Placed at the end of the document so the pages load faster -->
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Initialize jQuery library                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="assets/js/jquery-1.12.3.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Latest compiled and minified Bootstrap    -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- JavaScript Plugins                        -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- (!) Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Modernizer JS -->
+    <script src="assets/vendors/modernizr/modernizr-2.6.2.min.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- FlexSlider -->
+    <script type="text/javascript" src="assets/vendors/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- Coutdown -->
+    <script type="text/javascript" src="assets/vendors/countdown/jquery.countdown.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Custom Template JavaScript                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript">
+// <[CDATA[ 
+var TIMER = function() {
+   var now = new Date();
+   var targetDate = new Date('May 9, 2010 5:25 pm'); // See the time difference between the current date up to the target 
+date.
+   var difference = targetDate - now;
+   var milliseconds = Math.floor( difference % 1000);   
+       difference = difference / 1000;
+            
+   var seconds = Math.floor( difference % 60 );
+       difference = difference / 60;
+   var minutes = Math.floor( difference % 60 );
+       difference = difference / 60;
+   var hours = Math.floor( difference % 24 );
+       difference = difference / 24;
+ 
+   var days = Math.floor( difference );
+   
+ 
+   var outStr = hours+ ' hours, ' + minutes;
+	outStr += ' minutes, ' + seconds + ' seconds until the target date!'; 
+  	 ( document.getElementById('countdown') || document.all.countdown ).innerHTML = outStr;
+ 
+   setTimeout("TIMER()",1000);
+}
+onload = TIMER;
+// ]]> 
+ 
+</script>
+
+    <script type="text/javascript">
+    var timer;
+
+    var compareDate = new Date();
+    compareDate.setDate(compareDate.getDate() + 7); //just for this demo today + 7 days
+
+    timer = setInterval(function() {
+      timeBetweenDates(compareDate);
+    }, 1000);
+
+    function timeBetweenDates(toDate) {
+      var dateEntered = toDate;
+      var now = new Date();
+      var difference = dateEntered.getTime() - now.getTime();
+
+      if (difference <= 0) {
+
+        // Timer done
+        clearInterval(timer);
+      
+      } else {
+        
+        var seconds = Math.floor(difference / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+
+        hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+
+        $("#days0").text(days);
+        $("#hours0").text(hours);
+        $("#minutes0").text(minutes);
+        $("#seconds0").text(seconds);
+     
+        $("#days1").text(days);
+        $("#hours1").text(hours);
+        $("#minutes1").text(minutes);
+        $("#seconds1").text(seconds);
+        
+        $("#days2").text(days);
+        $("#hours2").text(hours);
+        $("#minutes2").text(minutes);
+        $("#seconds2").text(seconds);
+        
+        $("#days3").text(days);
+        $("#hours3").text(hours);
+        $("#minutes3").text(minutes);
+        $("#seconds3").text(seconds);
+        
+        $("#days4").text(days);
+        $("#hours4").text(hours);
+        $("#minutes4").text(minutes);
+        $("#seconds4").text(seconds);
+        
+        $("#days5").text(days);
+        $("#hours5").text(hours);
+        $("#minutes5").text(minutes);
+        $("#seconds5").text(seconds);
+    
+        
+      }
+    }
+    </script>
+   <script type="text/javascript">
+ 	$(document).ready(function notify() {
+
+		$.ajax({
+			type : "Get",
+			url : "/main_page_coupons",
+			data : "",
+			success : function(result) {
+				$("#main_page_coupons").load(" #main_page_coupons");
+				}
+		});
+		setTimeout(notify, 60000); 
+	});
+</script>
+    <script>
+ /*    var myVar = setInterval(updateEventCount, 60000);
+    function updateEventCount() {
+        $.get("main_page_coupons", function(fragment) { // get from controller
+            $("#main_page_coupons").replaceWith(fragment); // update snippet of page
+        });
+  //      setTimeout(updateEventCount, 5000);
+    } 
+  */   </script>
+    
+    <script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+<!-- <head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Canceled by user</h1>
+</body> -->
+</html>

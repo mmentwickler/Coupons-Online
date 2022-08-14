@@ -1,0 +1,226 @@
+
+<!-- 
+Template Name: FRIDAY | Coupons, Deals, Discounts and Promo codes Template
+Version: 1.0.0
+Author: CODASTROID
+Contact: codastroid@gmail.com
+Follow: https://themeforest.net/user/codastroid?ref=CODASTROID
+Theme Link: https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+
+ dir="ltr" class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/deals_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<th:block th:include="head ::head"  ></th:block>
+
+</head>
+
+<body id="body" class="wide-layout preloader-active">
+
+    <!--[if lt IE 9]>
+        <p class="browserupgrade alert-error">
+        	You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
+
+    <noscript>
+        <div class="noscript alert-error">
+            For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+		 instructions how to enable JavaScript in your web browser</a>.
+        </div>
+    </noscript>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PRELOADER                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-cube">
+            <div class="loader-cube__item1 loader-cube__item"></div>
+            <div class="loader-cube__item2 loader-cube__item"></div>
+            <div class="loader-cube__item4 loader-cube__item"></div>
+            <div class="loader-cube__item3 loader-cube__item"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- WRAPPER                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="pageWrapper" class="page-wrapper">
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+       <th:block th:include="header ::header"  ></th:block>
+              <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <div class="page-container ptb-10">
+                <div class="container">
+                    <section class="section deals-area ptb-30">
+  <h3 class="mb-40 t-uppercase">
+                               Expired Deals
+                       </h3>
+                        <!-- Page Control -->
+              <!--           <header class="page-control panel ptb-15 prl-20 pos-r mb-30">
+
+                            <!-- List Control View -->
+                           <!--  <ul class="list-control-view list-inline">
+                                <li><a href="deals_list.html"><i class="fa fa-bars"></i></a>
+                                </li>
+                                <li><a href="deals_grid.html"><i class="fa fa-th"></i></a>
+                                </li>
+                            </ul> -->
+                            <!-- End List Control View -->
+
+                         <!--    <div class="right-10 pos-tb-center">
+                                <select class="form-control input-sm">
+                                    <option>SORT BY</option>
+                                    <option>Newest items</option>
+                                    <option>Best sellers</option>
+                                    <option>Best rated</option>
+                                    <option>Price: low to high</option>
+                                    <option>Price: high to low</option>
+                                </select>
+                            </div>
+                        </header> --> 
+                        <!-- End Page Control -->
+
+                        <div id="all_active_coupons" class="row row-masnory row-tb-20">
+                            <div th:each="coupon : ${expired_coupons}" class="col-sm-6 col-lg-4">
+                                <div class="deal-single panel">                                   
+                                  <img class="card-img-top" th:src="@{/image/{id}(id=${coupon.id})}">
+              <div class="bg-white pt-20 pl-20 pr-15">
+<!--     <div id="countdown"></div> -->
+          <div id="timer" th:text="' Expire On : '+ ${#dates.format(coupon.getExpiry_Date(), 'dd-MM-yyyy HH:mm')}">
+           
+
+</div>
+                                        <div class="pr-md-10">
+                                   
+                                            <h3 class="deal-title mb-10">
+                            <a  th:text="${coupon.title}"></a>
+                        </h3>
+                                            <ul class="deal-meta list-inline mb-10 color-mid">
+                                                <li><i class="ico fa fa-shopping-basket mr-10"></i>      <span th:text="${coupon.total_Sell}"></span> Bought</li>
+                                            </ul>
+                                            <p class="text-muted mb-20" th:text="${coupon.description}"></p>
+                                        </div>
+                                        <div class="deal-price pos-r mb-15">
+                                            <h3 class="price ptb-5 text-right"><span class="price-sale" th:text="|${coupon.deal_Old_Price}$|">$300.00</span>
+                                            <span th:text="|${coupon.deal_New_Price}$|"></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+                        <!-- Page Pagination -->
+                        <!-- <div class="page-pagination text-center mt-30 p-10 panel">
+                            <nav>
+                                Page Pagination
+                                <ul class="page-pagination">
+                                    <li><a class="page-numbers previous" href="#">Previous</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">1</a>
+                                    </li>
+                                    <li><span class="page-numbers current">2</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">3</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">4</a>
+                                    </li>
+                                    <li><span class="page-numbers dots">...</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">20</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers next">Next</a>
+                                    </li>
+                                </ul>
+                                End Page Pagination
+                            </nav>
+                        </div> -->
+                        <!-- End Page Pagination -->
+
+                    </section>
+
+                </div>
+            </div>
+
+
+        </main>
+        <!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->
+         <th:block th:include="footer ::footer"  ></th:block>
+              <!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
+
+    </div>
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- END WRAPPER                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- ========== BUY THEME ========== -->
+ <!--    <a href="https://google.com/" class="buy-theme" data-href="https://themeforest.net/item/friday-coupons-deals-discounts-promo-codes-template/19577226?ref=CODASTROID" target="_blank" id="buy_theme">
+        <i class="fa fa-credit-card"></i>
+    </a> -->
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- BACK TO TOP                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="backTop" class="back-top is-hidden-sm-down">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- SCRIPTS                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- (!) Placed at the end of the document so the pages load faster -->
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Initialize jQuery library                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="assets/js/jquery-1.12.3.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Latest compiled and minified Bootstrap    -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- JavaScript Plugins                        -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- (!) Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Modernizer JS -->
+    <script src="assets/vendors/modernizr/modernizr-2.6.2.min.js"></script>
+    
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- FlexSlider -->
+    <script type="text/javascript" src="assets/vendors/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- Coutdown -->
+    <script type="text/javascript" src="assets/vendors/countdown/jquery.countdown.js"></script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Custom Template JavaScript                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+
+<!-- Mirrored from friday-theme.firebaseapp.com/deals_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 07:07:52 GMT -->
+</html>
