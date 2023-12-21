@@ -48,7 +48,7 @@ public class Mainpage {
 	void sendEmailfunc(String name, String email, String other, String mesg) {
 
 		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setTo("rajaue032@gmail.com");
+		msg.setTo("abc@gmail.com");
 		msg.setFrom(other);
 		msg.setSubject(name);
 		msg.setText(other + " " + mesg);
